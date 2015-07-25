@@ -14,13 +14,17 @@
 		5A64B8AE1B63765600D9FED7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64B8AD1B63765600D9FED7 /* main.m */; };
 		5A64B8B21B63765600D9FED7 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64B8B11B63765600D9FED7 /* RSAppDelegate.m */; };
 		5A64B8B51B63765600D9FED7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A64B8B31B63765600D9FED7 /* Main.storyboard */; };
-		5A64B8B81B63765600D9FED7 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64B8B71B63765600D9FED7 /* RSViewController.m */; };
+		5A64B8B81B63765600D9FED7 /* RSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64B8B71B63765600D9FED7 /* RSLoginViewController.m */; };
 		5A64B8BA1B63765600D9FED7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A64B8B91B63765600D9FED7 /* Images.xcassets */; };
 		5A64B8C11B63765600D9FED7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8C01B63765600D9FED7 /* XCTest.framework */; };
 		5A64B8C21B63765600D9FED7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8A11B63765600D9FED7 /* Foundation.framework */; };
 		5A64B8C31B63765600D9FED7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8A51B63765600D9FED7 /* UIKit.framework */; };
 		5A64B8CB1B63765600D9FED7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A64B8C91B63765600D9FED7 /* InfoPlist.strings */; };
 		5A64B8CD1B63765600D9FED7 /* GmailAgentLightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64B8CC1B63765600D9FED7 /* GmailAgentLightTests.m */; };
+		5A8062631B637B3D00CE2D6A /* RSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062621B637B3D00CE2D6A /* RSServerManager.m */; };
+		5A8062661B637B8300CE2D6A /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062651B637B8300CE2D6A /* RSUser.m */; };
+		5A8062691B637BB200CE2D6A /* RSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062681B637BB200CE2D6A /* RSAccessToken.m */; };
+		DF2A0F9BF9E6970B997EAB79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEE746EC7618F719DC23B0C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,23 @@
 		5A64B8B01B63765600D9FED7 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
 		5A64B8B11B63765600D9FED7 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
 		5A64B8B41B63765600D9FED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5A64B8B61B63765600D9FED7 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
-		5A64B8B71B63765600D9FED7 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
+		5A64B8B61B63765600D9FED7 /* RSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSLoginViewController.h; sourceTree = "<group>"; };
+		5A64B8B71B63765600D9FED7 /* RSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSLoginViewController.m; sourceTree = "<group>"; };
 		5A64B8B91B63765600D9FED7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5A64B8BF1B63765600D9FED7 /* GmailAgentLightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GmailAgentLightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B8C01B63765600D9FED7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5A64B8C81B63765600D9FED7 /* GmailAgentLightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GmailAgentLightTests-Info.plist"; sourceTree = "<group>"; };
 		5A64B8CA1B63765600D9FED7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5A64B8CC1B63765600D9FED7 /* GmailAgentLightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GmailAgentLightTests.m; sourceTree = "<group>"; };
+		5A8062611B637B3D00CE2D6A /* RSServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSServerManager.h; sourceTree = "<group>"; };
+		5A8062621B637B3D00CE2D6A /* RSServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSServerManager.m; sourceTree = "<group>"; };
+		5A8062641B637B8300CE2D6A /* RSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSUser.h; sourceTree = "<group>"; };
+		5A8062651B637B8300CE2D6A /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
+		5A8062671B637BB200CE2D6A /* RSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAccessToken.h; sourceTree = "<group>"; };
+		5A8062681B637BB200CE2D6A /* RSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAccessToken.m; sourceTree = "<group>"; };
+		9DEE746EC7618F719DC23B0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31045097115C075B13F9F1F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F300E45A11CFC92464487EB7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +76,7 @@
 				5A64B8A41B63765600D9FED7 /* CoreGraphics.framework in Frameworks */,
 				5A64B8A61B63765600D9FED7 /* UIKit.framework in Frameworks */,
 				5A64B8A21B63765600D9FED7 /* Foundation.framework in Frameworks */,
+				DF2A0F9BF9E6970B997EAB79 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281F4A2153664F7D6AC39C63 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E31045097115C075B13F9F1F /* Pods.debug.xcconfig */,
+				F300E45A11CFC92464487EB7 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5A64B8951B63765600D9FED7 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +109,7 @@
 				5A64B8C61B63765600D9FED7 /* GmailAgentLightTests */,
 				5A64B8A01B63765600D9FED7 /* Frameworks */,
 				5A64B89F1B63765600D9FED7 /* Products */,
+				281F4A2153664F7D6AC39C63 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +129,7 @@
 				5A64B8A31B63765600D9FED7 /* CoreGraphics.framework */,
 				5A64B8A51B63765600D9FED7 /* UIKit.framework */,
 				5A64B8C01B63765600D9FED7 /* XCTest.framework */,
+				9DEE746EC7618F719DC23B0C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,8 +140,14 @@
 				5A64B8B01B63765600D9FED7 /* RSAppDelegate.h */,
 				5A64B8B11B63765600D9FED7 /* RSAppDelegate.m */,
 				5A64B8B31B63765600D9FED7 /* Main.storyboard */,
-				5A64B8B61B63765600D9FED7 /* RSViewController.h */,
-				5A64B8B71B63765600D9FED7 /* RSViewController.m */,
+				5A64B8B61B63765600D9FED7 /* RSLoginViewController.h */,
+				5A64B8B71B63765600D9FED7 /* RSLoginViewController.m */,
+				5A8062671B637BB200CE2D6A /* RSAccessToken.h */,
+				5A8062681B637BB200CE2D6A /* RSAccessToken.m */,
+				5A8062641B637B8300CE2D6A /* RSUser.h */,
+				5A8062651B637B8300CE2D6A /* RSUser.m */,
+				5A8062611B637B3D00CE2D6A /* RSServerManager.h */,
+				5A8062621B637B3D00CE2D6A /* RSServerManager.m */,
 				5A64B8B91B63765600D9FED7 /* Images.xcassets */,
 				5A64B8A81B63765600D9FED7 /* Supporting Files */,
 			);
@@ -159,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A64B8D01B63765600D9FED7 /* Build configuration list for PBXNativeTarget "GmailAgentLight" */;
 			buildPhases = (
+				A8E15B0ACB9E11111B2493FE /* Check Pods Manifest.lock */,
 				5A64B89A1B63765600D9FED7 /* Sources */,
 				5A64B89B1B63765600D9FED7 /* Frameworks */,
 				5A64B89C1B63765600D9FED7 /* Resources */,
+				202669B096302CB6C34EA57F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,14 +278,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		202669B096302CB6C34EA57F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8E15B0ACB9E11111B2493FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A64B89A1B63765600D9FED7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8062691B637BB200CE2D6A /* RSAccessToken.m in Sources */,
 				5A64B8AE1B63765600D9FED7 /* main.m in Sources */,
 				5A64B8B21B63765600D9FED7 /* RSAppDelegate.m in Sources */,
-				5A64B8B81B63765600D9FED7 /* RSViewController.m in Sources */,
+				5A64B8B81B63765600D9FED7 /* RSLoginViewController.m in Sources */,
+				5A8062631B637B3D00CE2D6A /* RSServerManager.m in Sources */,
+				5A8062661B637B8300CE2D6A /* RSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +443,7 @@
 		};
 		5A64B8D11B63765600D9FED7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E31045097115C075B13F9F1F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +457,7 @@
 		};
 		5A64B8D21B63765600D9FED7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F300E45A11CFC92464487EB7 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +528,7 @@
 				5A64B8D21B63765600D9FED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A64B8D31B63765600D9FED7 /* Build configuration list for PBXNativeTarget "GmailAgentLightTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +537,7 @@
 				5A64B8D51B63765600D9FED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
