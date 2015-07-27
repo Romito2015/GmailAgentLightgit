@@ -17,9 +17,7 @@
 
 + (RSServerManager *) sharedManager;
 
-- (void) authorizeUser:(void(^)(RSUser *user)) completion;
-
-- (void) postRequestForToken: (NSString *) recivedAuthorizationCode
+- (void) authorizeUser: (NSString *) recivedAuthorizationCode
              onSuccess:(void(^)(RSAccessToken *gmailToken)) success
              onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 

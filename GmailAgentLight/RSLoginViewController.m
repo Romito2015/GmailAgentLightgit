@@ -9,24 +9,15 @@
 #import "RSLoginViewController.h"
 #import "RSAccessToken.h"
 #import "RSServerManager.h"
+#import "RSMessageListController.h"
+
 
 @interface RSLoginViewController () <UIWebViewDelegate>
-
-@property (copy, nonatomic) RSLoginCompletionBlock completion;
 
 
 @end
 
 @implementation RSLoginViewController
-
-- (id)initWithCompletionBlock:(RSLoginCompletionBlock)completion
-{
-    self = [super init];
-    if (self) {
-        self.completion = completion;
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -53,11 +44,6 @@
     
 }
 
-- (void)dealloc
-{
-    self.webView.delegate = nil;
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -77,9 +63,11 @@
         if (array.count > 1) {
             NSString *code = [array lastObject];
 
-            [[RSServerManager sharedManager] postRequestForToken:code
+            [[RSServerManager sharedManager] authorizeUser:code
                                             onSuccess:^(RSAccessToken *gmailToken) {
                                                 self.accessToken = gmailToken;
+                                                [self performSegueWithIdentifier:@"segueToMessageList" sender:self];
+                                                
                                                 
                                             }
                                             onFailure:^(NSError *error, NSInteger statusCode) {
@@ -87,12 +75,6 @@
         }
        
     }
-    
-    /**/
-    
-/*
-http://localhost/?state=security_token%3D138r5719ru3e1%26url%3Dhttps://oa2cb.example.com/myHome&code=4/s6LoKvVygxomDDtnTTlnae-X3VJLXrM72lAfhGBsPhU#
- */
     
     return YES;
 
@@ -107,6 +89,21 @@ http://localhost/?state=security_token%3D138r5719ru3e1%26url%3Dhttps://oa2cb.exa
     [self.indicator stopAnimating];
     
 }
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"segueToMessageList"]) {
+        
+        
+        RSMessageListController *destViewController = segue.destinationViewController;
+        
+            destViewController.navigationItem.title = @"List of messages";
+        destViewController.accessToken = self.accessToken;
+        
+        }
+    }
+
+
 
 
 @end

@@ -44,12 +44,8 @@
     return self;
 }
 
-- (void) authorizeUser:(void (^)(RSUser *))completion {
-    
-    
-}
 
-- (void) postRequestForToken:(NSString *)recivedAuthorizationCode
+- (void) authorizeUser:(NSString *)recivedAuthorizationCode
                    onSuccess:(void (^)(RSAccessToken *gmailToken))success
                    onFailure:(void (^)(NSError *, NSInteger))failure {
     
@@ -80,6 +76,9 @@
 
     
 }
+
+
+
 
 
 @end

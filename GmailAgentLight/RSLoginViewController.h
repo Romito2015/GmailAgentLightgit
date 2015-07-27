@@ -10,14 +10,11 @@
 
 @class RSAccessToken;
 
-typedef void(^RSLoginCompletionBlock)(RSAccessToken *token);
-
 @interface RSLoginViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) RSAccessToken *accessToken;
 
-- (id) initWithCompletionBlock:(RSLoginCompletionBlock) completion;
 
 @end

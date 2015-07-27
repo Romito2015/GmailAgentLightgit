@@ -24,6 +24,7 @@
 		5A8062631B637B3D00CE2D6A /* RSServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062621B637B3D00CE2D6A /* RSServerManager.m */; };
 		5A8062661B637B8300CE2D6A /* RSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062651B637B8300CE2D6A /* RSUser.m */; };
 		5A8062691B637BB200CE2D6A /* RSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8062681B637BB200CE2D6A /* RSAccessToken.m */; };
+		5A98DFD51B650A3F00BACCEB /* RSMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A98DFD41B650A3F00BACCEB /* RSMessageListController.m */; };
 		DF2A0F9BF9E6970B997EAB79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEE746EC7618F719DC23B0C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,8 @@
 		5A8062651B637B8300CE2D6A /* RSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSUser.m; sourceTree = "<group>"; };
 		5A8062671B637BB200CE2D6A /* RSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAccessToken.h; sourceTree = "<group>"; };
 		5A8062681B637BB200CE2D6A /* RSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAccessToken.m; sourceTree = "<group>"; };
+		5A98DFD31B650A3F00BACCEB /* RSMessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMessageListController.h; sourceTree = "<group>"; };
+		5A98DFD41B650A3F00BACCEB /* RSMessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMessageListController.m; sourceTree = "<group>"; };
 		9DEE746EC7618F719DC23B0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31045097115C075B13F9F1F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F300E45A11CFC92464487EB7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				5A64B8B31B63765600D9FED7 /* Main.storyboard */,
 				5A64B8B61B63765600D9FED7 /* RSLoginViewController.h */,
 				5A64B8B71B63765600D9FED7 /* RSLoginViewController.m */,
+				5A98DFD31B650A3F00BACCEB /* RSMessageListController.h */,
+				5A98DFD41B650A3F00BACCEB /* RSMessageListController.m */,
 				5A8062671B637BB200CE2D6A /* RSAccessToken.h */,
 				5A8062681B637BB200CE2D6A /* RSAccessToken.m */,
 				5A8062641B637B8300CE2D6A /* RSUser.h */,
@@ -318,6 +323,7 @@
 			files = (
 				5A8062691B637BB200CE2D6A /* RSAccessToken.m in Sources */,
 				5A64B8AE1B63765600D9FED7 /* main.m in Sources */,
+				5A98DFD51B650A3F00BACCEB /* RSMessageListController.m in Sources */,
 				5A64B8B21B63765600D9FED7 /* RSAppDelegate.m in Sources */,
 				5A64B8B81B63765600D9FED7 /* RSLoginViewController.m in Sources */,
 				5A8062631B637B3D00CE2D6A /* RSServerManager.m in Sources */,
