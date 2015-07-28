@@ -52,7 +52,7 @@
     NSDictionary *tokenParameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                                       recivedAuthorizationCode, @"code",
    @"555621197106-tbhcihl4onod6560neusglq41i6g6m7f.apps.googleusercontent.com", @"client_id",
-                                                   @"zCAzuRI960jRuUgKvwRHvXMI", @"client_secret",
+                                                   @"dYnKQi2a55a9YMG4axZjJdQr", @"client_secret",
                                                            @"http://localhost", @"redirect_uri",
                                                          @"authorization_code", @"grant_type", nil];
     
@@ -80,10 +80,8 @@
                onFailure:(void (^)(NSError *, NSInteger))failure {
     
     NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                @"messages", @"fields",
-                                                                    @"true", @"includeSpamTrash",
-                                                @"https://mail.google.com/", @"scope",
-                                                                   @"query", @"q",nil];
+                                                                  @"true", @"includeSpamTrash",
+                                              @"https://mail.google.com/", @"scope",nil];
     
     AFHTTPRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
     NSString *authValue = [NSString stringWithFormat:@"Bearer %@", accessToken.access_token];

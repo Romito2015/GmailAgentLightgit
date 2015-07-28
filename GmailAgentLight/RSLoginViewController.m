@@ -27,7 +27,7 @@
     self.navigationItem.title = @"Login";
     NSString *urlString = @"https://accounts.google.com/o/oauth2/auth?"
                         "response_type=code&"
-                        "scope=email%20profile&"
+                        "scope=https://mail.google.com/&"
                         "access_type=offline&"
                         "login_hint=emailadress&"
                         "state=security_token%3D138r5719ru3e1%26url%3Dhttps://oa2cb.example.com/myHome&"
