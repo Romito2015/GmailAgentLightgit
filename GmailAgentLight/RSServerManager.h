@@ -21,4 +21,8 @@
              onSuccess:(void(^)(RSAccessToken *gmailToken)) success
              onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 
+- (void) getMessagesList: (RSAccessToken *) accessToken
+               onSuccess:(void(^)(id *result)) success
+             onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
+
 @end

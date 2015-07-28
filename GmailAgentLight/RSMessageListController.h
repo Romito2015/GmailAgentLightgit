@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RSAccessToken.h"
+#import "RSServerManager.h"
 
 @interface RSMessageListController : UIViewController
 @property (strong, nonatomic) RSAccessToken *accessToken;

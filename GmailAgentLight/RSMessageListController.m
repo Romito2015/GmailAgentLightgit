@@ -8,6 +8,8 @@
 
 #import "RSMessageListController.h"
 
+
+
 @interface RSMessageListController ()
 
 @end
@@ -28,6 +30,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.hidesBackButton = YES;
+    
+    [[RSServerManager sharedManager] getMessagesList:self.accessToken
+                                           onSuccess:^(id *result) {
+        
+    }
+                                           onFailure:^(NSError *error, NSInteger statusCode) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning

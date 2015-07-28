@@ -52,7 +52,7 @@
     NSDictionary *tokenParameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                                       recivedAuthorizationCode, @"code",
    @"555621197106-tbhcihl4onod6560neusglq41i6g6m7f.apps.googleusercontent.com", @"client_id",
-                                                   @"Wh4F3OqoczhTAVZE_CA8iEPq", @"client_secret",
+                                                   @"zCAzuRI960jRuUgKvwRHvXMI", @"client_secret",
                                                            @"http://localhost", @"redirect_uri",
                                                          @"authorization_code", @"grant_type", nil];
     
@@ -73,10 +73,41 @@
              failure(error, operation.response.statusCode);
          }
      }];
-
-    
 }
 
+- (void) getMessagesList:(RSAccessToken *)accessToken
+               onSuccess:(void (^)(__autoreleasing id *))success
+               onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                @"messages", @"fields",
+                                                                    @"true", @"includeSpamTrash",
+                                                @"https://mail.google.com/", @"scope",
+                                                                   @"query", @"q",nil];
+    
+    AFHTTPRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
+    NSString *authValue = [NSString stringWithFormat:@"Bearer %@", accessToken.access_token];
+   [requestSerializer setValue: authValue forHTTPHeaderField:@"Authorization"];
+   [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    self.requestOperationManager.requestSerializer = requestSerializer;
+    [self.requestOperationManager
+     GET:@"gmail/v1/users/me/messages"
+     parameters: Parameters
+     success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+         NSLog(@"JSON : %@", responseObject);
+         
+         if (success) {
+             success(nil);
+         }
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         if (failure) {
+             failure(error, operation.response.statusCode);
+         }
+     }];
+}
 
 
 
