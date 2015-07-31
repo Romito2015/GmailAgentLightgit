@@ -65,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="87" y="16"/>
         </scene>
         <!--Message List Controller-->
         <scene sceneID="OoO-1Z-erm">
@@ -83,7 +84,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wXk-L4-sXx">
+                                    <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" id="wXk-L4-sXx">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wXk-L4-sXx" id="bPI-sV-0Jp">
@@ -92,11 +93,18 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="00p-9x-4Ym" id="5ZX-Z8-jMn"/>
+                                    <outlet property="delegate" destination="00p-9x-4Ym" id="7mr-5d-rpy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SQV-Iv-zV7"/>
+                    <connections>
+                        <outlet property="tableView" destination="Cx8-9M-RlR" id="tFA-Qa-pve"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0g-BE-3hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

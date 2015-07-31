@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "RSAccessToken.h"
 #import "RSServerManager.h"
+#import "RSMessageInList.h"
 
-@interface RSMessageListController : UIViewController
+
+@interface RSMessageListController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic) RSAccessToken *accessToken;
+@property (strong, nonatomic) RSMessageInList *mailList;
+
+- (void) geMessagesFromServer;
+
+
 @end

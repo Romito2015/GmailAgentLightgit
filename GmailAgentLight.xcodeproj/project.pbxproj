@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A44CC231B6A053E00B27348 /* RSMessageInList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A44CC221B6A053E00B27348 /* RSMessageInList.m */; };
 		5A64B8A21B63765600D9FED7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8A11B63765600D9FED7 /* Foundation.framework */; };
 		5A64B8A41B63765600D9FED7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8A31B63765600D9FED7 /* CoreGraphics.framework */; };
 		5A64B8A61B63765600D9FED7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64B8A51B63765600D9FED7 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A44CC211B6A053E00B27348 /* RSMessageInList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSMessageInList.h; sourceTree = "<group>"; };
+		5A44CC221B6A053E00B27348 /* RSMessageInList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSMessageInList.m; sourceTree = "<group>"; };
 		5A64B89E1B63765600D9FED7 /* GmailAgentLight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GmailAgentLight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A64B8A11B63765600D9FED7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A64B8A31B63765600D9FED7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				5A64B8B71B63765600D9FED7 /* RSLoginViewController.m */,
 				5A98DFD31B650A3F00BACCEB /* RSMessageListController.h */,
 				5A98DFD41B650A3F00BACCEB /* RSMessageListController.m */,
+				5A44CC211B6A053E00B27348 /* RSMessageInList.h */,
+				5A44CC221B6A053E00B27348 /* RSMessageInList.m */,
 				5A8062671B637BB200CE2D6A /* RSAccessToken.h */,
 				5A8062681B637BB200CE2D6A /* RSAccessToken.m */,
 				5A8062641B637B8300CE2D6A /* RSUser.h */,
@@ -322,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8062691B637BB200CE2D6A /* RSAccessToken.m in Sources */,
+				5A44CC231B6A053E00B27348 /* RSMessageInList.m in Sources */,
 				5A64B8AE1B63765600D9FED7 /* main.m in Sources */,
 				5A98DFD51B650A3F00BACCEB /* RSMessageListController.m in Sources */,
 				5A64B8B21B63765600D9FED7 /* RSAppDelegate.m in Sources */,

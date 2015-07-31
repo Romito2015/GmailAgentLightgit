@@ -10,6 +10,8 @@
 #import "AFNetworking.h"
 #import "RSUser.h"
 #import "RSAccessToken.h"
+#import "RSMessageInList.h"
+
 
 @interface RSServerManager()
 
@@ -76,7 +78,7 @@
 }
 
 - (void) getMessagesList:(RSAccessToken *)accessToken
-               onSuccess:(void (^)(__autoreleasing id *))success
+               onSuccess:(void (^)(RSMessageInList *result))success
                onFailure:(void (^)(NSError *, NSInteger))failure {
     
     NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -93,10 +95,13 @@
      GET:@"gmail/v1/users/me/messages"
      parameters: Parameters
      success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-         NSLog(@"JSON : %@", responseObject);
          
+         //NSLog(@"JSON : %@", responseObject);
+         
+         RSMessageInList * messagesList = [[RSMessageInList alloc] initWithListResponse:responseObject];
+        
          if (success) {
-             success(nil);
+             success(messagesList);
          }
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
