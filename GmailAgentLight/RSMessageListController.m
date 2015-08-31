@@ -94,11 +94,11 @@
                     NSString *messgeId = [msgDict objectForKey:@"id"];
                     [[RSServerManager sharedManager] getRepresentationOfAMessage:messgeId onSuccess:^(RSMessage *result) {
                         
-                        if (result.currentLabel == RSSent) {
+                        if (result.currentLabels & RSSent) {
                             
                             [self.sentMessageArray addObject:result];
                             
-                        } else if (result.currentLabel == RSInbox) {
+                        } else if (result.currentLabels & RSInbox) {
                             
                             [self.inboxMessageArray addObject:result];
                             

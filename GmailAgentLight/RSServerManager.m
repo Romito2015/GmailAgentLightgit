@@ -47,6 +47,8 @@
 }
 
 
+#pragma mark - getting authorization AccessToken
+
 - (void) authorizeUser:(NSString *)recivedAuthorizationCode
                    onSuccess:(void (^)(RSAccessToken *gmailToken))success
                    onFailure:(void (^)(NSError *, NSInteger))failure {
@@ -76,6 +78,9 @@
          }
      }];
 }
+
+
+#pragma mark - get list of messages
 
 - (void) getMessagesList:(RSAccessToken *)accessToken
                onSuccess:(void (^)(NSArray *result))success
@@ -116,6 +121,9 @@
      }];
 }
 
+
+#pragma mark - get representation of single message
+
 - (void) getRepresentationOfAMessage:(NSString *)messageId
                          onSuccess:(void (^)(RSMessage *))success
                          onFailure:(void (^)(NSError *, NSInteger))failure {
@@ -133,6 +141,7 @@
         //NSLog(@"JSON : %@", responseObject);
          
          RSMessage *messageObject = [[RSMessage alloc] initWithResponse:responseObject];
+         //NSLog(@"%@",messageObject);
          
          if (success) {
              success(messageObject);
@@ -146,6 +155,9 @@
      }];
     
 }
+
+
+#pragma mark - send e-mail message
 
 - (void) sendEmailMessage:(NSString *)rawBase64String
                 onSuccess:(void (^)(__autoreleasing id *))success

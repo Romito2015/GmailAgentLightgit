@@ -17,22 +17,94 @@
         
         self.messageId = [responseList objectForKey:@"id"];
         self.snippet   = [responseList objectForKey:@"snippet"];
-        //self.labelIds  = [NSMutableArray arrayWithArray:];
         
-        for (NSString *label in [responseList objectForKey:@"labelIds"]) {
-            if ([label isEqualToString:@"SENT"]) {
-                self.currentLabel = RSSent;
-                break;
-            } else if ([label isEqualToString:@"INBOX"]) {
-                self.currentLabel = RSInbox;
-                break;
-            } else if (![label isEqualToString:@"INBOX"] && ![label isEqualToString:@"SENT"]) {
-                self.currentLabel = RSOther;
-                break;
-            }
-
-        }
+        
+        NSArray *labelIds = [responseList objectForKey:@"labelIds"];
+        [self cloneLabelsToObjectMesage:labelIds];
+        
+        
     }
     return self;
 }
+
+- (void) cloneLabelsToObjectMesage:(NSArray *) labelIds {
+    
+    for (NSString *label in labelIds) {
+        
+        RSMessageLabel oneOfLabels = [self getLabelType:label];
+        self.currentLabels = self.currentLabels | oneOfLabels;
+    
+    }
+    
+    
+}
+
+
+- (RSMessageLabel) getLabelType: (NSString *) labelId {
+    
+    RSMessageLabel label;
+    
+    if ([labelId isEqualToString:@"SENT"]) {
+        label = RSSent;
+        
+    } else if ([labelId isEqualToString:@"INBOX"]) {
+        label = RSInbox;
+        
+    } else if ([labelId isEqualToString:@"IMPORTANT"]) {
+        label = RSImportant;
+        
+    } else if ([labelId isEqualToString:@"UNREAD"]) {
+        label = RSUnread;
+        
+    } else if ([labelId isEqualToString:@"SPAM"]) {
+        label = RSSpam;
+        
+    } else if ([labelId isEqualToString:@"TRASH"]) {
+        label = RSTrash;
+        
+    } else if ([labelId isEqualToString:@"CATEGORY_PROMOTIONS"]) {
+        label = RSCategoryPromotioms;
+        
+    } else if ([labelId isEqualToString:@"CATEGORY_PERSONAL"]) {
+        label = RSCategoryPersonal;
+        
+    } else if ([labelId isEqualToString:@"CATEGORY_SOCIAL"]) {
+        label = RSCategorySocial;
+    }
+    
+    
+    return label;
+    
+}
+
+
+
+- (NSString*) answerByType:(RSMessageLabel) labelType {
+    return self.currentLabels & labelType ? @"YES" : @"no";
+}
+
+- (NSString*) description {
+    
+    return [NSString stringWithFormat: @"SENT = %@\n"
+                                        "INBOX = %@\n"
+                                        "IMPORTANT = %@\n"
+                                        "UNREAD = %@\n"
+                                        "SPAM = %@\n"
+                                        "TRASH = %@\n"
+                                        "CATEGORY_PROMOTIONS = %@\n"
+                                        "CATEGORY_PERSONAL = %@\n"
+                                        "CATEGORY_SOCIAL = %@",
+                                        [self answerByType:RSSent],
+                                        [self answerByType:RSInbox],
+                                        [self answerByType:RSImportant],
+                                        [self answerByType:RSUnread],
+                                        [self answerByType:RSSpam],
+                                        [self answerByType:RSTrash],
+                                        [self answerByType:RSCategoryPromotioms],
+                                        [self answerByType:RSCategoryPersonal],
+                                        [self answerByType:RSCategorySocial]];
+    
+}
+
+
 @end
