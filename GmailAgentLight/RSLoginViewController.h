@@ -12,9 +12,12 @@
 
 @interface RSLoginViewController : UIViewController
 
+@property (strong, nonatomic) RSAccessToken *accessToken;
+
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
-@property (strong, nonatomic) RSAccessToken *accessToken;
+
+
 
 
 @end

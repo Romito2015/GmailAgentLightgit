@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RSAccessToken.h"
-#import "RSMessageInList.h"
+#import "RSMessage.h"
 
 @class RSUser;
 
@@ -23,7 +23,17 @@
              onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
 
 - (void) getMessagesList: (RSAccessToken *) accessToken
-               onSuccess:(void(^)(RSMessageInList *result)) success
+               onSuccess:(void(^)(NSArray *result)) success
              onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
+
+- (void) getRepresentationOfAMessage: (NSString *) messageId
+               onSuccess:(void(^)(RSMessage *result)) success
+               onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
+
+- (void) sendEmailMessage: (NSString *) rawBase64String
+                           onSuccess:(void(^)(id *result)) success
+                           onFailure: (void (^)(NSError *error, NSInteger statusCode)) failure;
+
+
 
 @end

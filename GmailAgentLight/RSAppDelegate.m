@@ -10,8 +10,15 @@
 
 @implementation RSAppDelegate
 
+void onUncaughtException(NSException *exception)
+{
+    NSLog(@"uncaught exception: %@", exception.description);
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSSetUncaughtExceptionHandler(&onUncaughtException);
     // Override point for customization after application launch.
     return YES;
 }

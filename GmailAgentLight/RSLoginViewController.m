@@ -24,16 +24,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+ 
+    
     self.navigationItem.title = @"Login";
     NSString *urlString = @"https://accounts.google.com/o/oauth2/auth?"
                         "response_type=code&"
                         "scope=https://mail.google.com/&"
-                        "access_type=offline&"
+                        "access_type=online&"
                         "login_hint=emailadress&"
                         "state=security_token%3D138r5719ru3e1%26url%3Dhttps://oa2cb.example.com/myHome&"
                         "redirect_uri=http://localhost&"
                         "client_id=555621197106-tbhcihl4onod6560neusglq41i6g6m7f.apps.googleusercontent.com&"
-                        "approval_prompt=force";
+                        "approval_prompt=auto";
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -49,6 +51,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -97,13 +100,27 @@
         
         RSMessageListController *destViewController = segue.destinationViewController;
         
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) , ^{
+            
+            [[RSServerManager sharedManager] getMessagesList:self.accessToken onSuccess:^(NSArray *result) {
+                
+                
+                
+                destViewController.mailListArray = [NSArray arrayWithArray:result];
+                
+                
+            } onFailure:^(NSError *error, NSInteger statusCode) {
+                
+                
+            }];
+            
+        });
+        
+        
             destViewController.navigationItem.title = @"List of messages";
         destViewController.accessToken = self.accessToken;
         
         }
     }
-
-
-
 
 @end

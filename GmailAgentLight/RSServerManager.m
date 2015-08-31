@@ -8,14 +8,14 @@
 
 #import "RSServerManager.h"
 #import "AFNetworking.h"
-#import "RSUser.h"
 #import "RSAccessToken.h"
-#import "RSMessageInList.h"
+
 
 
 @interface RSServerManager()
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *requestOperationManager;
+
 
 @end
 
@@ -78,7 +78,7 @@
 }
 
 - (void) getMessagesList:(RSAccessToken *)accessToken
-               onSuccess:(void (^)(RSMessageInList *result))success
+               onSuccess:(void (^)(NSArray *result))success
                onFailure:(void (^)(NSError *, NSInteger))failure {
     
     NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -98,10 +98,14 @@
          
          //NSLog(@"JSON : %@", responseObject);
          
-         RSMessageInList * messagesList = [[RSMessageInList alloc] initWithListResponse:responseObject];
+         //RSMessageInList * messagesList = [[RSMessageInList alloc] initWithListResponse:responseObject];
+         NSArray *messagesArray = [responseObject objectForKey:@"messages"];
+         
+         //NSLog(@"hello");
+         
         
          if (success) {
-             success(messagesList);
+             success(messagesArray);
          }
      }
      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -111,6 +115,70 @@
          }
      }];
 }
+
+- (void) getRepresentationOfAMessage:(NSString *)messageId
+                         onSuccess:(void (^)(RSMessage *))success
+                         onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"raw", @"format",
+                                @"id,labelIds,snippet", @"fields",
+                                @"https://mail.google.com/", @"scope",nil];
+    
+    [self.requestOperationManager
+     GET:[NSString stringWithFormat:@"gmail/v1/users/me/messages/%@",messageId]
+     parameters: Parameters
+     success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+         
+        //NSLog(@"JSON : %@", responseObject);
+         
+         RSMessage *messageObject = [[RSMessage alloc] initWithResponse:responseObject];
+         
+         if (success) {
+             success(messageObject);
+         }
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         if (failure) {
+             failure(error, operation.response.statusCode);
+         }
+     }];
+    
+}
+
+- (void) sendEmailMessage:(NSString *)rawBase64String
+                onSuccess:(void (^)(__autoreleasing id *))success
+                onFailure:(void (^)(NSError *, NSInteger))failure {
+    
+    NSDictionary *Parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                rawBase64String, @"raw",
+                                @"https://mail.google.com/", @"scope", nil];
+    
+    [self.requestOperationManager
+     POST:@"gmail/v1/users/me/messages/send"
+     parameters:Parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         
+         NSLog(@"JSON : %@", responseObject);
+         
+         
+         /*
+          if (success) {
+          success(id);
+          }*/
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         NSLog(@"Error: %@", error);
+         if (failure) {
+             failure(error, operation.response.statusCode);
+         }
+     }];
+
+    
+    
+}
+
 
 
 
